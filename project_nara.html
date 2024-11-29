@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai Bumi Denden!</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, #f9f7f7, #dbe2ef);
+            color: #3f72af;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #112d4e;
+        }
+
+        #puzzle {
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 10px;
+            width: calc(100% - 24px);
+            border: 1px solid #3f72af;
+            border-radius: 5px;
+            font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background: #3f72af;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #112d4e;
+        }
+
+        #message {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f7f7;
+            color: #3f72af;
+            font-size: 1.5em;
+            border: 2px solid #3f72af;
+            border-radius: 10px;
+            display: none;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        #photo {
+            margin-top: 30px;
+            display: none;
+        }
+
+        /* Styling untuk gambar, membuatnya lebih kecil dan menyamping */
+        #photo img {
+            width: 150px; /* Lebar gambar lebih kecil */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px; /* Spasi antar gambar */
+            display: inline-block; /* Membuat gambar menyamping */
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Birthday Puzzle 🎂</h1>
+    <div id="puzzle">
+        <p><strong>Clue:</strong> When did we start dating?</p>
+        <input type="text" id="answer" placeholder="Your answer here...">
+        <button onclick="checkAnswer()">Submit</button>
+    </div>
+    <div id="message">
+        Happy Birthday to my favourite person! I lovee yauuu!  
+        <br>
+        <a href="https://nickel-crabapple-178.notion.site/18-14dd31ec21488054b5bfd68fba3d4ce2?pvs=4" target="_blank">Click For Another Gift!</a>
+       
+    </div>
+    <div id="photo">
+        <!-- Multiple photos, disusun menyamping -->
+        <img src="img/photo1.jpg" alt="waktu aku sidang, kamu yang ajak foto!">
+        <img src="img/photo2.jpg" alt="couple pakai kacamata hoho">
+        <img src="img/photo3.jpg" alt="kamu ganteng banget waktu sidang! dies">
+        <img src="img/photo4.jpg" alt="waktu aku sidang, kamu yang ajak foto!">
+        <img src="img/photo5.jpg" alt="couple pakai kacamata hoho">
+        <img src="img/photo6.jpg" alt="kamu ganteng banget waktu sidang! dies">
+    </div>
+  
+    <footer>
+        Made with 💖 just for you.
+    </footer>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value.toLowerCase();
+            const message = document.getElementById("message");
+
+            if (
+                answer === "26 april 2023" || 
+                answer === "26/04/2023" || 
+                answer === "26-04-2023"
+            ) {
+                message.style.display = "block"; // Tampilkan ucapan
+                document.getElementById("puzzle").style.display = "none"; // Sembunyikan teka-teki
+                document.getElementById("photo").style.display = "block"; // Tampilkan foto-foto
+            } else {
+                alert("Try again! Hint: It's literally our day bae??!!!");
+            }
+        }
+
+        // Sembunyikan foto di awal
+        document.getElementById("photo").style.display = "none";
+    </script>
+</body>
+</html>
